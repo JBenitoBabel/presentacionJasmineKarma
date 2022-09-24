@@ -1,0 +1,12 @@
+node_modules
+.angular
+android
+ios
+www
+
+*.log
+log.txt
+npm-debug.log*
+
+*.tmp
+*.tmp.*
