@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { Cat } from './lifecycle.page';
 
-fdescribe('LifecyclePage', () => {
+describe('LifecyclePage', () => {
   let component: Cat;
   let fixture: ComponentFixture<Cat>;
 
@@ -42,6 +42,12 @@ fdescribe('LifecyclePage', () => {
 
   it('the cat eats 50g and there are 150 left', () => {
     const amount = 50;
+    const result = zan.eat(amount);
+    expect(result).toBe(150);
+  });
+
+  it('the cat eats 200g and there are 0 left', () => {
+    const amount = 200;
     const result = zan.eat(amount);
     expect(result).toBe(150);
   });
