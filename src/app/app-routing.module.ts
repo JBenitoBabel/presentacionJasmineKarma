@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'basic-tests',
     loadChildren: () => import('./basic-tests/basic-tests.module').then( m => m.BasicTestsPageModule)
   },
+  {
+    path: 'lifecycle',
+    loadChildren: () => import('./lifecycle/lifecycle.module').then( m => m.LifecyclePageModule)
+  },
 ];
 
 @NgModule({
