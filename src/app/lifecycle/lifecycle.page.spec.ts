@@ -49,7 +49,7 @@ describe('LifecyclePage', () => {
   it('the cat eats 200g and there are 0 left', () => {
     const amount = 200;
     const result = zan.eat(amount);
-    expect(result).toBe(150);
+    expect(result).toBe(0);
   });
 
 });
