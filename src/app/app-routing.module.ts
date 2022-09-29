@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'event-emitter',
     loadChildren: () => import('./medium-tests/event-emitter/event-emitter.module').then( m => m.EventEmitterPageModule)
   },
+  {
+    path: 'form',
+    loadChildren: () => import('./medium-tests/form/form.module').then( m => m.FormPageModule)
+  },
 ];
 
 @NgModule({
