@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'form',
     loadChildren: () => import('./medium-tests/form/form.module').then( m => m.FormPageModule)
   },
+  {
+    path: 'spy',
+    loadChildren: () => import('./medium-tests/spy/spy.module').then( m => m.SpyPageModule)
+  },
 ];
 
 @NgModule({

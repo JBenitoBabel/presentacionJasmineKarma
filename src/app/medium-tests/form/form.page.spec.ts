@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { FormPage } from './form.page';
 
-fdescribe('FormPage', () => {
+describe('FormPage', () => {
   let component: FormPage;
   let fixture: ComponentFixture<FormPage>;
 
