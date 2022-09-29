@@ -16,16 +16,16 @@ export class SpyPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.globalService.get()
-          .subscribe( (result: any) => this.cats = result );
+    this.globalService.get('cats')
+          .subscribe( result => this.cats = result );
   }
 
-  addCat() {
+  addCats() {
     const cat = { name: 'Zan' };
 
-    this.globalService.put(cat)
+    this.globalService.post(cat, 'cats')
           .subscribe(
-            medicoDB => this.cats.push(medicoDB),
+            catDB => this.cats.push(catDB),
             err => this.messageError = err
           );
   }
@@ -34,7 +34,7 @@ export class SpyPage implements OnInit {
     const confirmar = confirm('¿Estas seguro que desea borrar este gato?');
 
     if ( confirmar ) {
-      this.globalService.delete( id );
+      this.globalService.delete(id,'cats');
     }
 
   }

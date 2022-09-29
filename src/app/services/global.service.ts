@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +11,19 @@ export class GlobalService {
     public http: HttpClient
   ) { }
 
-  get() {
-    return this.http.get('...');
+  get(info: string) {
+    return this.http.get('...').pipe(
+      map(resp => resp[info]))
   }
 
-  put( data: any ) {
-    return this.http.post('...', data );
+  post( data: any, info: string ) {
+    return this.http.post('...', data ).pipe(
+      map(resp => resp[info]));
   }
 
-  delete( id: string ) {
-    return this.http.delete('...' );
+  delete( id: string, info: string ) {
+    return this.http.delete('...' ).pipe(
+      map(resp => resp[info]));
   }
 
 }
