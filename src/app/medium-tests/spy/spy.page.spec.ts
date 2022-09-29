@@ -71,7 +71,7 @@ describe('SpyPage', () => {
   });
 
   xit('deleteCat must call the server to remove a cat', () => {
-    const spy = spyOn(service, 'delete').and.returnValue(from([null]));
+    const spy = spyOn(service, 'delete').and.callFake( () => null);
     component.deleteCat('1');
     expect(spy).toHaveBeenCalledWith('1', 'cats'); // obliga a intervenir al usuario
   });

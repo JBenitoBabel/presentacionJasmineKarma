@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'spy',
     loadChildren: () => import('./medium-tests/spy/spy.module').then( m => m.SpyPageModule)
   },
+  {
+    path: 'private',
+    loadChildren: () => import('./medium-tests/private/private.module').then( m => m.PrivatePageModule)
+  },
 ];
 
 @NgModule({
