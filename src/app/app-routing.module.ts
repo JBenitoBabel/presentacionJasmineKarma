@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'lifecycle',
     loadChildren: () => import('./lifecycle/lifecycle.module').then( m => m.LifecyclePageModule)
   },
+  {
+    path: 'event-emitter',
+    loadChildren: () => import('./medium-tests/event-emitter/event-emitter.module').then( m => m.EventEmitterPageModule)
+  },
 ];
 
 @NgModule({
