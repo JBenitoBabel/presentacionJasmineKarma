@@ -43,6 +43,7 @@ describe('SpyPage', () => {
     spyOn(service, 'get').and.callFake(() => {
       return from([cats]);
     })
+
     component.ngOnInit();
     expect(component.cats.length).toBeGreaterThan(0);
   });
@@ -66,6 +67,7 @@ describe('SpyPage', () => {
   it('if addCats fails the error message should be the same as the server', () => {
     const error = 'No se pudo añadir el gato';
     spyOn(service, 'post').and.returnValue(throwError(error));
+    //spyOn(service, 'post').and.throwError(error);
     component.addCats();
     expect(component.messageError).toBe(error);
   });
